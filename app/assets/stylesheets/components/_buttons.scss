@@ -1,0 +1,15 @@
+.btn-1 {
+  background-color: $blue !important;
+  color: $white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border: none !important;
+
+  &:hover {
+    background-color: darken($blue, 10%) !important;
+  }
+}
+
+.btn-r10 {
+  border-radius: 10px;
+}

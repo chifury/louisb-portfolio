@@ -2,15 +2,20 @@
 
 // For example:
 $red: #FD1015;
-$blue: #0D6EFD;
+// $blue: #0D6EFD; // Bootstrap blue
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
-$light-gray: #F4F4F4;
-// Non-default Bootstrap colors
-$darkest-gray: #435058;
-$darker-gray: #848c8e;
-$dark-gray: #bfb7b6;
-$lighter-gray: #f1f2ee;
-$yellow-green: #dcf763;
+// $light-gray: #F4F4F4;
+
+// App main color scheme
+// Define variables for your color scheme
+$blue: #0681FE; // Lighter blue
+$black: #262729;
+$white: #F4F4F4;
+$gray: #555B6C;
+$dark-gray: #434750;
+$light-gray: #B0B8C1;
+$cyan: #0dcaf0;
+$lime-yellow: #C7EF00;
