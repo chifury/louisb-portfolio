@@ -1,0 +1,52 @@
+class ProjectsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
+
+  def index
+    @projects = Project.all
+  end
+
+  def new
+    @project = Project.new
+  end
+
+  def create
+    @project = Project.new(project_params)
+    @project.user = current_user
+
+    if @project.save
+      redirect_to project_path(@project), notice: "Project was successfully created!"
+    else
+      render "new", status: :unprocessable_content
+    end
+  end
+
+  def edit
+    @project = Project.find_by(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+
+    if @project.update(project_params)
+      redirect_to project_path(@project)
+    else
+      render "edit", status: :unprocessable_content
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+
+    if @project.destroy
+      redirect_to projects_path, status: :see_other
+    else
+      render :show, status: :unprocessable_content
+    end
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:title, :description, :img_url, :tech_stack, :project_url, :github_url, :user_id)
+  end
+end
