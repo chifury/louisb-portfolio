@@ -1,16 +1,17 @@
 <!-- Projects Index -->
+<%= render "projects_hero_banner" %>
 <div class="container">
   <section id="projects-index">
-    <div class="row justify-content-between align-items-center">
-      <h2 class="mt-5 mb-4">Featured projects</h2>
-      <% @projects.each do |project| %>
-        <% if project.personal_project == true %>
-          <div class="col-12 col-md-6 col-lg-4">
+    <% @projects.each do |project| %>
+      <% if project.personal_project == true %>
+        <div class="row justify-content-start align-items-center">
+          <h2 class="mt-5 mb-4">My projects</h2>
+          <div class="col-12 col-md-6 col-lg-4 mb-2">
             <div class="card card-project shadow-sm rounded-4 mb-4">
               <div class="card-body p-4">
                 <h3 class="card-title fw-bold mb-2"><%= project.title %></h3>
                 <p class="card-text small text-muted mb-3">
-                  <%= project.description %>
+                  <%= project.description.capitalize %>
                 </p>
                 <%= image_tag project.img_url, alt: "Project screenshot", class: "img-fluid rounded-4 mb-3" %>
                 <!-- <p class="mb-4 text-secondary text-tech-stack">
@@ -27,29 +28,27 @@
                 </div>
                 <!-- If user is signed-in show the 'Edit' button -->
                 <% if user_signed_in? == true %>
-                  <div class="my-3 justify-content-end">
-                    <%= link_to "Edit", cocktail_path(@cocktail), class: "btn btn-secondary"  %>
+                  <div class="d-flex justify-content-end mt-4 mb-2">
+                    <%= link_to project_path(project), class: "btn btn-secondary rounded-4" do %>
+                      <i class="fa-solid fa-pen-to-square fs-5"></i>
+                    <% end %>
                   </div>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <%= link_to "See more projects...", "#" %>
-        </div>
-        <hr class="my-5">
+        <hr class="mt-5 mb-3">
         <!-- Open Source Project Contributions-->
       <% else %>
-        <div class="row justify-content-center align-items-top">
+        <div class="row justify-content-start align-items-center">
           <h2 class="mt-5 mb-4">Open source contributions</h2>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 col-lg-4 mb-2">
             <div class="card card-project shadow-sm rounded-4 mb-4">
               <div class="card-body p-4">
                 <h3 class="card-title fw-bold mb-2"><%= project.title %></h3>
-                <!-- If this is not a personal_project, add reminder / hint to talk a little bit about your contribution focus to the "open source" project in the 'form field'. IF more than 2 non personal_projects -->
                 <p class="card-text small text-muted mb-3">
-                  <%= project.description %>
+                  <%= project.description.capitalize %>
                 </p>
                 <%= image_tag project.img_url, alt: "Open source project screenshot", class: "img-fluid rounded-4 mb-3" %>
                 <!-- <p class="mb-4 text-secondary text-tech-stack">
@@ -66,8 +65,10 @@
                 </div>
                 <!-- If user is signed-in show the 'Edit' button -->
                 <% if user_signed_in? == true %>
-                  <div class="my-3 justify-content-end">
-                    <%= link_to "Edit", cocktail_path(@cocktail), class: "btn btn-secondary"  %>
+                  <div class="d-flex justify-content-end mt-4 mb-2">
+                    <%= link_to project_path(project), class: "btn btn-secondary rounded-4" do %>
+                      <i class="fa-solid fa-pen-to-square fs-5"></i>
+                    <% end %>
                   </div>
                 <% end %>
               </div>

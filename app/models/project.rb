@@ -9,5 +9,4 @@ class Project < ApplicationRecord
   validates :tech_stack, presence: true
   validates :project_url, presence: true
   validates :user_id, presence: true
-  validates :personal_project, presence: true
 end

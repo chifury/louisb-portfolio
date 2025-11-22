@@ -7,7 +7,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card card-project shadow-sm rounded-4 mb-4">
             <div class="card-body p-4">
-              <h3 class="card-title fw-bold mb-2"><%= project.title %></h3>
+              <h3 class="card-title fw-bold mb-2"><%= project.title.capitalize %></h3>
               <p class="card-text small text-muted mb-3">
                 <%= project.description %>
               </p>
@@ -29,16 +29,20 @@
         </div>
       </div>
       <div>
-        <%= link_to "See more projects...", "#" %>
+        <%= link_to "See more projects...", projects_path, class: "text-decoration-none fs-5 gray-link" %>
       </div>
       <hr class="my-5">
       <!-- Open Source Project Contributions-->
+    <% else %>
       <div class="row justify-content-center align-items-top">
-      <% else %>
+        <div class="col-12 col-md-6">
+          <h2 class="text-start">Open source contributions</h2>
+          <h4 class="text-start mb-5">Most contributions focused on snapshot testing with Vitest to test if the rendered components had not changed on load.</h4>
+        </div>
         <div class="col-12 col-md-6">
           <div class="card card-project shadow-sm rounded-4 mb-4">
             <div class="card-body p-4">
-              <h3 class="card-title fw-bold mb-2"><%= project.title %></h3>
+              <h3 class="card-title fw-bold mb-2"><%= project.title.capitalize %></h3>
               <p class="card-text small text-muted mb-3">
                 <%= project.description %>
               </p>
@@ -58,12 +62,7 @@
             </div>
           </div>
         </div>
-      <% end %>
-      <div class="col-12 col-md-6">
-        <h2 class="mt-5 mb-4">Open source contributions</h2>
-        <h4 class="mb-5">Most contributions focused on snapshot testing with Vitest to test if the rendered components had not changed on load.</h4>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
 </section>

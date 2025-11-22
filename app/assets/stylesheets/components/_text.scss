@@ -1,3 +1,4 @@
+// Element tag styles
 h1 {
   color: $black;
 }
@@ -18,8 +19,26 @@ p {
   color: $light-gray;
 }
 
-.gray {
-  color: $light-gray
+li {
+  // color: #919090;
+  color: #e5782a;
+}
+
+// Custom text styles
+
+.lighter-gray {
+  color: #aca9a9;
+}
+
+.gray-link {
+  color: $gray;
+  transition: color 0.3s;
+}
+
+.gray-link:hover,
+.gray-link:focus {
+  // color: black;
+  color: $blue;
 }
 
 .text-tech-stack {
