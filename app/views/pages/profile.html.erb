@@ -1,0 +1,44 @@
+<%= render "profile_hero_banner" %>
+<div class="container">
+  <section id="profile">
+    <h2 class="mt-5 mb-4">Profile info</h2>
+    <div class="row align-items-top">
+      <!-- Avatar and info -->
+      <div class="col-12 col-md-6 d-flex align-items-center">
+        <%= image_tag "dog2", alt: "Fun dog", class: "rounded-circle border border-dark avatar-profile me-3", style: "height: 20vh; width: auto;" %>
+        <div>
+          <p class="soft-orange"><span class="text-dark">Email:</span> <%= @user.email %></p>
+          <ul>
+            <li><span class="text-dark">Total projects created in app:</span> <%= @projects_total %></li>
+            <li><span class="text-dark">Personal projects created:</span> <%= @personal_projects_count %></li>
+            <li><span class="text-dark">Open source projects contributed to:</span> <%= @non_personal_projects_count %></li>
+          </ul>
+          <div class="d-flex justify-content-start">
+            <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-dark rounded-4" %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project list -->
+      <div class="col-12 col-md-6">
+        <div class="my-5">
+          <h3>List of all <span class="soft-orange"><%= @projects_total %></span> projects</h3>
+          <p class="text-dark">
+            <span class="text-success">Green</span> = Personal projects
+            <span class="text-black">|</span>
+            <span class="text-danger">Red</span> = Open source projects
+          </p>
+          <ul>
+            <% @projects.each do |project| %>
+              <% if project.personal_project == true %>
+                <li class="text-success"><%= project.title %></li>
+              <% else %>
+                <li class="text-danger"><%= project.title %></li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

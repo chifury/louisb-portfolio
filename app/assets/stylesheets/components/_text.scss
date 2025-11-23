@@ -16,7 +16,7 @@ h4 {
 }
 
 p {
-  color: $light-gray;
+  color: $gray;
 }
 
 li {
@@ -28,6 +28,9 @@ li {
 
 .lighter-gray {
   color: #aca9a9;
+}
+.gray-non-link {
+  color: $gray;
 }
 
 .gray-link {
@@ -43,4 +46,8 @@ li {
 
 .text-tech-stack {
   letter-spacing: 1px;
+}
+
+.soft-orange {
+  color: #e5782a;
 }
