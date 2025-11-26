@@ -9,10 +9,9 @@ Project.destroy_all
 puts "Database cleaned!"
 
 # For security, edit the user password in the app after seeding (live & local environments).
-puts "Reminder: edit the user password in the app after seeding (live & local environments)."
+puts "Reminder: edit the user password in the app after seeding (live / local env accordingly)."
 
 # User
-# ThJykyf5Lvuv2#wkUqVtXtuLl73z2AQ9D28cPbuJ7IuuBAzEL$4^
 puts "Creating user..."
 users = []
 
@@ -48,7 +47,9 @@ market_sensei = Project.create!(
   img_url: "market-sensei-dashboard-screenshot",
   tech_stack: "Ruby-on-Rails . Bootstrap . StimulusJS . PostgreSQL . Active Record . OpenAI",
   project_url: "https://www.marketsensei.app/",
-  github_url: "https://github.com/chifury/market-sensei",
+  # github_url: "https://github.com/chifury/market-sensei",
+  # Github repo is private so need to make this dynamic on the frontend.
+  github_url: "#",
   personal_project: true,
   user: user_1
 )
