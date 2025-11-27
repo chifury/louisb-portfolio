@@ -34,7 +34,7 @@ sipfolio = Project.create!(
   img_url: "sipfolio-cocktail-screenshot",
   tech_stack: "Ruby-on-Rails . Bootstrap . StimulusJS . PostgreSQL . Active Record",
   project_url: "https://www.sipfolio.rocks/",
-  github_url: "https://github.com/chifury/rails-mister-cocktail",
+  github_url: "https://github.com/louiskb/rails-mister-cocktail",
   personal_project: true,
   user: user_1
 )
@@ -47,7 +47,7 @@ market_sensei = Project.create!(
   img_url: "market-sensei-dashboard-screenshot",
   tech_stack: "Ruby-on-Rails . Bootstrap . StimulusJS . PostgreSQL . Active Record . OpenAI",
   project_url: "https://www.marketsensei.app/",
-  # github_url: "https://github.com/chifury/market-sensei",
+  # github_url: "https://github.com/louiskb/market-sensei",
   # Github repo is private so need to make this dynamic on the frontend.
   github_url: "#",
   personal_project: true,
@@ -62,7 +62,7 @@ dokodemo_fit = Project.create!(
   img_url: "dokodemo-fit-routines-screenshot",
   tech_stack: "Ruby-on-Rails . Bootstrap . StimulusJS . PostgreSQL . Active Record . OpenAI",
   project_url: "https://dokodemo-fit-66811301c708.herokuapp.com/",
-  github_url: "https://github.com/chifury/DokodemoFit",
+  github_url: "https://github.com/louiskb/DokodemoFit",
   personal_project: true,
   user: user_1
 )
