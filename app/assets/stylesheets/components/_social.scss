@@ -21,3 +21,17 @@
   color: #00acee;
   transform: scale(1.2);
 }
+
+.social-horizontal a {
+  color: $gray;
+  font-size: 1.30rem;
+  transition: transform 0.3s, color 0.2s;
+  display: block;
+}
+
+.social-horizontal a:hover,
+.social-horizontal a:focus {
+  color: #00acee;
+  // color: $blue;
+  transform: scale(1.2);
+}
